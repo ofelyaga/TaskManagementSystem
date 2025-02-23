@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.dialect.PostgreSQLEnumJdbcType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,11 +26,8 @@ public class User {
 
     private String email;
     private String password;
-    private String role; // "ADMIN", "USER"
+    @JdbcType(PostgreSQLEnumJdbcType.class)
+    @Enumerated(EnumType.STRING)
+    private Role role; // "ADMIN", "USER"
 
-    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
-    private List<Task> createdTasks = new ArrayList<>();
-
-    @OneToMany(mappedBy = "assignee", cascade = CascadeType.ALL)
-    private List<Task> assignedTasks = new ArrayList<>();
 }
