@@ -1,4 +1,4 @@
-package com.example.taskmanagementsystem;
+package com.example;
 
 import jakarta.servlet.MultipartConfigElement;
 import jakarta.servlet.ServletRegistration;

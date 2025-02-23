@@ -1,4 +1,4 @@
-package com.example.taskmanagementsystem.controller;
+package com.example.controller;
 
 import com.example.dto.TaskCreateDTO;
 import com.example.dto.TaskUpdateDTO;
